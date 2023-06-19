@@ -65,7 +65,7 @@ async def start(b, m):
     await StreamBot.send_photo(
         chat_id=m.chat.id,
         photo ="https://graph.org/file/72689fe7b446757d5b4e7.jpg",
-        caption =f'Hi {m.from_user.mention(style="md")}!,\n𝐀 𝐒𝐢𝐦𝐩𝐥𝐞 𝐅𝐢𝐥𝐞 𝐭𝐨 𝐋𝐢𝐧𝐤 𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐨𝐫 𝐁𝐨𝐭.\n𝚂𝚎𝚗𝚍 𝚘𝚛 𝚏𝚘𝚛𝚠𝚊𝚛𝚍 𝚖𝚎 𝚊𝚗𝚢 𝚏𝚒𝚕𝚎 𝚝𝚘 𝚐𝚎𝚝 𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝚕𝚒𝚗𝚔 𝚊𝚗𝚍 𝚜𝚝𝚛𝚎𝚊𝚖𝚊𝚋𝚕𝚎 𝚕𝚒𝚗𝚔.!',
+        caption =f' Hᴇʏ, {m.from_user.mention(style="md")}\nIᴍ Tᴇʟᴇɢʀᴀᴍ Fɪʟᴇs Sᴛʀᴇᴀᴍɪɴɢ Bᴏᴛ ᴀs ᴡᴇʟʟ Dɪʀᴇᴄᴛ Lɪɴᴋs Gᴇɴᴇʀᴀᴛᴇ.\nCʟɪᴄᴋ ᴏɴ Hᴇʟᴘ ᴛᴏ ɢᴇᴛ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ\n<u>𝗪𝗔𝗥𝗡𝗜𝗡𝗚 🚸</u>\n🔞 Pᴏʀɴ ᴄᴏɴᴛᴇɴᴛꜱ ʟᴇᴀᴅꜱ ᴛᴏ ᴘᴇʀᴍᴀɴᴇɴᴛ ʙᴀɴ ʏᴏᴜ.\n<b>🥀 Bᴏᴛ Mᴀɪɴᴛᴀɪɴᴇᴅ Bʏ :@YourDemandZone</b>',
         reply_markup=buttonz)
 
 
