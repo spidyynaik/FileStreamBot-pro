@@ -15,7 +15,7 @@ from Adarsh.utils.file_properties import get_name, get_hash, get_media_file_size
 db = Database(Var.DATABASE_URL, Var.name)
 
 
-MY_PASS = os.environ.get("MY_PASS", None)
+"""MY_PASS = os.environ.get("MY_PASS", None)
 pass_dict = {}
 pass_db = Database(Var.DATABASE_URL, "ag_passwords")
 
@@ -43,11 +43,11 @@ async def login_handler(c: Client, m: Message):
             ag_text = "Wrong password, try again"
         await ag.edit(ag_text)
     except Exception as e:
-        print(e)
+        print(e) """
 
 @StreamBot.on_message((filters.private) & (filters.document | filters.video | filters.audio | filters.photo) , group=4)
 async def private_receive_handler(c: Client, m: Message):
-    if MY_PASS:
+    """if MY_PASS:
         check_pass = await pass_db.get_user_pass(m.chat.id)
         if check_pass== None:
             await m.reply_text("Login first using /login cmd \n Password is 0000")
@@ -60,7 +60,7 @@ async def private_receive_handler(c: Client, m: Message):
         await c.send_message(
             Var.BIN_CHANNEL,
             f"New User Joined! : \n\n Name : [{m.from_user.first_name}](tg://user?id={m.from_user.id}) Started Your Bot!!"
-        )
+        )"""
     if Var.UPDATES_CHANNEL != "None":
         try:
             user = await c.get_chat_member(Var.UPDATES_CHANNEL, m.chat.id)
