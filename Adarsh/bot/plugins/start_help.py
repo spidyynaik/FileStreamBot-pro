@@ -55,7 +55,7 @@ async def start(b, m):
         except UserNotParticipant:
              await StreamBot.send_photo(
                 chat_id=m.chat.id,
-                photo="https://telegra.ph/file/9d94fc0af81234943e1a9.jpg",
+                photo="https://telegra.ph/file/6035c9116c8e118408a35.jpg",
                 caption="<i>𝙹𝙾𝙸𝙽 CHANNEL 𝚃𝙾 𝚄𝚂𝙴 𝙼𝙴🔐</i>",
                 reply_markup=InlineKeyboardMarkup(
                     [
@@ -76,8 +76,8 @@ async def start(b, m):
             return
     await StreamBot.send_photo(
         chat_id=m.chat.id,
-        photo ="https://telegra.ph/file/ca10e459bc6f48a4ad0f7.jpg",
-        caption =f'Hi {m.from_user.mention(style="md")}!,\nI am Telegram File to Link Generator Bot with Channel support.\nSend me any file and get a direct download link and streamable link.!',
+        photo ="https://graph.org/file/72689fe7b446757d5b4e7.jpg",
+        caption =f'Hi {m.from_user.mention(style="md")}!,\n𝐈'𝐦 𝐀 𝐒𝐢𝐦𝐩𝐥𝐞 𝐅𝐢𝐥𝐞 𝐭𝐨 𝐋𝐢𝐧𝐤 𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐨𝐫 𝐁𝐨𝐭.\n𝚂𝚎𝚗𝚍/𝚏𝚘𝚛𝚠𝚊𝚛𝚍 𝚖𝚎 𝚊𝚗𝚢 𝚏𝚒𝚕𝚎 𝚝𝚘 𝚐𝚎𝚝 𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝚕𝚒𝚗𝚔 𝚊𝚜 𝚠𝚎𝚕𝚕 𝚜𝚝𝚛𝚎𝚊𝚖𝚒𝚗𝚐 𝚕𝚒𝚗𝚔.!',
         reply_markup=buttonz)
 
 
