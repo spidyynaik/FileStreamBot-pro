@@ -110,8 +110,8 @@ async def help_handler(bot, message):
                 disable_web_page_preview=True)
             return
     await message.reply_text(
-        text="""<b> Send me any file or video i will give you streamable link and download link.</b>\n
-<b> I also support Channels, add me to you Channel and send any media files and see miracle✨ also send /list to know all commands""",
+        text="""<b>Sᴇɴᴅ ᴍᴇ ᴀɴʏ ғɪʟᴇ ᴏʀ ᴠɪᴅᴇᴏ ɪ ᴡɪʟʟ ɢɪᴠᴇ ʏᴏᴜ sᴛʀᴇᴀᴍᴀʙʟᴇ ʟɪɴᴋ ᴀɴᴅ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ.</b>\n
+<b> I ᴀʟsᴏ sᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟs, Aᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ sᴇɴᴅ ᴀɴʏ ᴍᴇᴅɪᴀ ғɪʟᴇs ᴀɴᴅ sᴇᴇ ᴛʜᴇ ᴍᴀɢɪᴄ✨""",
         
         disable_web_page_preview=True,
         reply_markup=InlineKeyboardMarkup(
