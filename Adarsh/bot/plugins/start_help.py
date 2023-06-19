@@ -23,14 +23,14 @@ from pyrogram.types import ReplyKeyboardMarkup
             resize_keyboard=True
         )
 else:"""
-            buttonz=ReplyKeyboardMarkup(
+buttonz=ReplyKeyboardMarkup(
             [
                 ["sᴛᴀʀᴛ⚡️","ʜᴇʟᴘ📚","ᴅᴄ"],
                 ["Cʜᴀɴɴᴇʟ♻️","ᴘɪɴɢ📡","sᴛᴀᴛᴜs📊","Cʀᴇᴀᴛᴏʀ😎"]
                         
             ],
             resize_keyboard=True
-        )
+        )            
 
             
             
