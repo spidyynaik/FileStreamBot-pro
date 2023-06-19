@@ -65,7 +65,7 @@ async def start(b, m):
     await StreamBot.send_photo(
         chat_id=m.chat.id,
         photo ="https://graph.org/file/72689fe7b446757d5b4e7.jpg",
-        caption =f' Hᴇʏ, {m.from_user.mention(style="md")}\nIᴍ Tᴇʟᴇɢʀᴀᴍ Fɪʟᴇs Sᴛʀᴇᴀᴍɪɴɢ Bᴏᴛ ᴀs ᴡᴇʟʟ Dɪʀᴇᴄᴛ Lɪɴᴋs Gᴇɴᴇʀᴀᴛᴇ.\nCʟɪᴄᴋ ᴏɴ Hᴇʟᴘ ᴛᴏ ɢᴇᴛ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ\n<u>𝗪𝗔𝗥𝗡𝗜𝗡𝗚 🚸</u>\n🔞 Pᴏʀɴ ᴄᴏɴᴛᴇɴᴛꜱ ʟᴇᴀᴅꜱ ᴛᴏ ᴘᴇʀᴍᴀɴᴇɴᴛ ʙᴀɴ ʏᴏᴜ.\n<b>🥀 Bᴏᴛ Mᴀɪɴᴛᴀɪɴᴇᴅ Bʏ :@YourDemandZone</b>',
+        caption =f' Hᴇʏ, {m.from_user.mention(style="md")}\n◽️Iᴍ Tᴇʟᴇɢʀᴀᴍ Fɪʟᴇs Sᴛʀᴇᴀᴍɪɴɢ Bᴏᴛ ᴀs ᴡᴇʟʟ Dɪʀᴇᴄᴛ Lɪɴᴋs Gᴇɴᴇʀᴀᴛᴇ.\n◽️Cʟɪᴄᴋ ᴏɴ Hᴇʟᴘ ᴛᴏ ɢᴇᴛ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ\n<u>𝗪𝗔𝗥𝗡𝗜𝗡𝗚 🚸</u>\n◽️🔞 Pᴏʀɴ ᴄᴏɴᴛᴇɴᴛꜱ ʟᴇᴀᴅꜱ ᴛᴏ ᴘᴇʀᴍᴀɴᴇɴᴛ ʙᴀɴ ʏᴏᴜ.\n<b>🥀Mᴀɪɴᴛᴀɪɴᴇᴅ Bʏ :<a href="https://t.me/YourDemandZone">YᴏᴜʀDᴇᴍᴀɴᴅZᴏɴᴇ</a></b>',
         reply_markup=buttonz)
 
 
@@ -111,7 +111,7 @@ async def help_handler(bot, message):
             return
     await message.reply_text(
         text="""<b>Sᴇɴᴅ ᴍᴇ ᴀɴʏ ғɪʟᴇ ᴏʀ ᴠɪᴅᴇᴏ ɪ ᴡɪʟʟ ɢɪᴠᴇ ʏᴏᴜ sᴛʀᴇᴀᴍᴀʙʟᴇ ʟɪɴᴋ ᴀɴᴅ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ.</b>\n
-<b> I ᴀʟsᴏ sᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟs, Aᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ sᴇɴᴅ ᴀɴʏ ᴍᴇᴅɪᴀ ғɪʟᴇs ᴀɴᴅ sᴇᴇ ᴛʜᴇ ᴍᴀɢɪᴄ✨""",
+<b> I ᴀʟsᴏ sᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟs, Aᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ sᴇɴᴅ ᴀɴʏ ᴍᴇᴅɪᴀ ғɪʟᴇs ᴀɴᴅ sᴇᴇ ᴛʜᴇ ᴍᴀɢɪᴄ✨</b>""",
         
         disable_web_page_preview=True,
         reply_markup=InlineKeyboardMarkup(
