@@ -15,14 +15,14 @@ from pyrogram.types import ReplyKeyboardMarkup
 
 buttonz = ReplyKeyboardMarkup(
     [
-        ["sᴛᴀʀᴛ⚡️", "ʜᴇʟᴘ📚", "ᴅᴄ"],
-        ["Cʜᴀɴɴᴇʟ♻️", "ᴘɪɴɢ📡", "sᴛᴀᴛᴜs📊", "Cʀᴇᴀᴛᴏʀ😎"]
+        ["𝐒𝐭𝐚𝐫𝐭⚡️", "𝐇𝐞𝐥𝐩📚", "𝐒𝐭𝐚𝐭𝐮𝐬📊"],
+        ["𝐂𝐡𝐚𝐧𝐧𝐞𝐥♻️", "𝐏𝐢𝐧𝐠📡","𝐂𝐫𝐞𝐚𝐭𝐨𝐫😎"]
     ],
     resize_keyboard=True
 )
 
             
-@StreamBot.on_message((filters.command("start") | filters.regex('sᴛᴀʀᴛ⚡️')) & filters.private )
+@StreamBot.on_message((filters.command("start") | filters.regex('𝐒𝐭𝐚𝐫𝐭⚡️')) & filters.private )
 async def start(b, m):
     if not await db.is_user_exist(m.from_user.id):
         await db.add_user(m.from_user.id)
@@ -65,11 +65,11 @@ async def start(b, m):
     await StreamBot.send_photo(
         chat_id=m.chat.id,
         photo ="https://graph.org/file/72689fe7b446757d5b4e7.jpg",
-        caption =f'Hi {m.from_user.mention(style="md")}!,\n𝐈𝐦 𝐀 𝐒𝐢𝐦𝐩𝐥𝐞 𝐅𝐢𝐥𝐞 𝐭𝐨 𝐋𝐢𝐧𝐤 𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐨𝐫 𝐁𝐨𝐭.\n𝚂𝚎𝚗𝚍 𝚘𝚛 𝚏𝚘𝚛𝚠𝚊𝚛𝚍 𝚖𝚎 𝚊𝚗𝚢 𝚏𝚒𝚕𝚎 𝚝𝚘 𝚐𝚎𝚝 𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝚕𝚒𝚗𝚔 𝚊𝚗𝚍 𝚜𝚝𝚛𝚎𝚊𝚖𝚊𝚋𝚕𝚎 𝚕𝚒𝚗𝚔.!',
+        caption =f'Hi {m.from_user.mention(style="md")}!,\n𝐀 𝐒𝐢𝐦𝐩𝐥𝐞 𝐅𝐢𝐥𝐞 𝐭𝐨 𝐋𝐢𝐧𝐤 𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐨𝐫 𝐁𝐨𝐭.\n𝚂𝚎𝚗𝚍 𝚘𝚛 𝚏𝚘𝚛𝚠𝚊𝚛𝚍 𝚖𝚎 𝚊𝚗𝚢 𝚏𝚒𝚕𝚎 𝚝𝚘 𝚐𝚎𝚝 𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝚕𝚒𝚗𝚔 𝚊𝚗𝚍 𝚜𝚝𝚛𝚎𝚊𝚖𝚊𝚋𝚕𝚎 𝚕𝚒𝚗𝚔.!',
         reply_markup=buttonz)
 
 
-@StreamBot.on_message((filters.command("help") | filters.regex('ʜᴇʟᴘ📚')) & filters.private )
+@StreamBot.on_message((filters.command("help") | filters.regex('𝐇𝐞𝐥𝐩📚')) & filters.private )
 async def help_handler(bot, message):
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id)
