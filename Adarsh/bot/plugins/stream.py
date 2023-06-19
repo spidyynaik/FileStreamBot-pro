@@ -24,7 +24,7 @@ pass_db = Database(Var.DATABASE_URL, "ag_passwords")
 async def login_handler(c: Client, m: Message):
     try:
         try:
-            ag = await m.reply_text("Nᴏᴡ sᴇɴᴅ ᴍᴇ ᴘᴀssᴡᴏʀᴅ.\n\n Eɴᴛᴇʀ ᴛʜᴇ ᴘᴀssᴡᴏʀᴅ ᴀs 𝟶𝟶𝟶𝟶 \n\n(You can use /cancel command to cancel the process)")
+            ag = await m.reply_text("Nᴏᴡ sᴇɴᴅ ᴍᴇ ᴘᴀssᴡᴏʀᴅ.\n\n Eɴᴛᴇʀ ᴛʜᴇ ᴘᴀssᴡᴏʀᴅ ᴀs 0000 \n\n(You can use /cancel command to cancel the process)")
             _text = await c.listen(m.chat.id, filters=filters.text, timeout=90)
             if _text.text:
                 textp = _text.text
