@@ -61,7 +61,7 @@ async def start(bot, update):
 
     
     
-@StreamBot.on_message(filters.command("list"))
+"""@StreamBot.on_message(filters.command("list"))
 async def list(l, m):
     LIST_MSG = "Hi! {} Here is a list of all my commands \n \n 1 . `𝐒𝐭𝐚𝐫𝐭⚡️` \n 2. `𝐇𝐞𝐥𝐩📚` \n 3.`𝐂𝐡𝐚𝐧𝐧𝐞𝐥♻️` \n 4. `𝐏𝐢𝐧𝐠📡` \n 5. `𝐒𝐭𝐚𝐭𝐮𝐬📊` \n 6. `𝐂𝐫𝐞𝐚𝐭𝐨𝐫😎` "
     await l.send_message(chat_id = m.chat.id,
@@ -69,7 +69,7 @@ async def list(l, m):
         
     )
     
-    
+ """   
 @StreamBot.on_message(filters.regex("𝐏𝐢𝐧𝐠📡"))
 async def ping(b, m):
     start_t = time.time()
