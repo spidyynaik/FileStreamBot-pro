@@ -13,26 +13,14 @@ from Adarsh.utils.file_properties import get_name, get_hash, get_media_file_size
 db = Database(Var.DATABASE_URL, Var.name)
 from pyrogram.types import ReplyKeyboardMarkup
 
-"""if MY_PASS:
-            buttonz=ReplyKeyboardMarkup(
-            [
-                ["sᴛᴀʀᴛ⚡️","ʜᴇʟᴘ📚","ʟᴏɢɪɴ🔑","ᴅᴄ"],
-                ["Cʜᴀɴɴᴇʟ♻️","ᴘɪɴɢ📡","sᴛᴀᴛᴜs📊","Cʀᴇᴀᴛᴏʀ😎"]
-                        
-            ],
-            resize_keyboard=True
-        )
-else:"""
-buttonz=ReplyKeyboardMarkup(
-            [
-                ["sᴛᴀʀᴛ⚡️","ʜᴇʟᴘ📚","ᴅᴄ"],
-                ["Cʜᴀɴɴᴇʟ♻️","ᴘɪɴɢ📡","sᴛᴀᴛᴜs📊","Cʀᴇᴀᴛᴏʀ😎"]
-                        
-            ],
-            resize_keyboard=True
-        )            
+buttonz = ReplyKeyboardMarkup(
+    [
+        ["sᴛᴀʀᴛ⚡️", "ʜᴇʟᴘ📚", "ᴅᴄ"],
+        ["Cʜᴀɴɴᴇʟ♻️", "ᴘɪɴɢ📡", "sᴛᴀᴛᴜs📊", "Cʀᴇᴀᴛᴏʀ😎"]
+    ],
+    resize_keyboard=True
+)
 
-            
             
 @StreamBot.on_message((filters.command("start") | filters.regex('sᴛᴀʀᴛ⚡️')) & filters.private )
 async def start(b, m):
