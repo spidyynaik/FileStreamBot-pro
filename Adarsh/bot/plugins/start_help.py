@@ -16,8 +16,8 @@ from pyrogram.types import ReplyKeyboardMarkup
 if MY_PASS:
             buttonz=ReplyKeyboardMarkup(
             [
-                ["start⚡️","help📚","login🔑","DC"],
-                ["follow❤️","ping📡","status📊","maintainers😎"]
+                ["sᴛᴀʀᴛ⚡️","ʜᴇʟᴘ📚","ʟᴏɢɪɴ🔑","ᴅᴄ"],
+                ["Cʜᴀɴɴᴇʟ♻️","ᴘɪɴɢ📡","sᴛᴀᴛᴜs📊","Cʀᴇᴀᴛᴏʀ😎"]
                         
             ],
             resize_keyboard=True
@@ -25,8 +25,8 @@ if MY_PASS:
 else:
             buttonz=ReplyKeyboardMarkup(
             [
-                ["start⚡️","help📚","DC"],
-                ["follow❤️","ping📡","status📊","maintainers😎"]
+                ["sᴛᴀʀᴛ⚡️","ʜᴇʟᴘ📚","ᴅᴄ"],
+                ["Cʜᴀɴɴᴇʟ♻️","ᴘɪɴɢ📡","sᴛᴀᴛᴜs📊","Cʀᴇᴀᴛᴏʀ😎"]
                         
             ],
             resize_keyboard=True
@@ -34,7 +34,7 @@ else:
 
             
             
-@StreamBot.on_message((filters.command("start") | filters.regex('start⚡️')) & filters.private )
+@StreamBot.on_message((filters.command("start") | filters.regex('sᴛᴀʀᴛ⚡️')) & filters.private )
 async def start(b, m):
     if not await db.is_user_exist(m.from_user.id):
         await db.add_user(m.from_user.id)
@@ -81,7 +81,7 @@ async def start(b, m):
         reply_markup=buttonz)
 
 
-@StreamBot.on_message((filters.command("help") | filters.regex('help📚')) & filters.private )
+@StreamBot.on_message((filters.command("help") | filters.regex('ʜᴇʟᴘ📚')) & filters.private )
 async def help_handler(bot, message):
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id)
@@ -128,8 +128,8 @@ async def help_handler(bot, message):
         disable_web_page_preview=True,
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("💁‍♂️ DEV", url="https://t.me/Mr_Spidy")],
-                [InlineKeyboardButton("💥 Upadate", url="https://t.me/YourDemandZone")]
+                [InlineKeyboardButton("💁‍♂️ Dᴇᴠ", url="https://t.me/Mr_Spidy")],
+                [InlineKeyboardButton("💥 Uᴘᴅᴀᴛᴇ", url="https://t.me/YourDemandZone")]
             ]
         )
     )
