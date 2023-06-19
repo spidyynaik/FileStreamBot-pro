@@ -7,10 +7,10 @@ from utils_bot import *
 from Adarsh import StartTime
 
 
-START_TEXT = """ Your Telegram DC Is : `{}`  """
+#START_TEXT = """ Your Telegram DC Is : `{}`  """
 
 
-@StreamBot.on_message(filters.regex("Cʀᴇᴀᴛᴏʀ😎"))
+@StreamBot.on_message(filters.regex("𝐂𝐫𝐞𝐚𝐭𝐨𝐫😎"))
 async def maintainers(b,m):
     try:
        await b.send_message(chat_id=m.chat.id,text="HELLO",quote=True)
@@ -30,19 +30,19 @@ async def maintainers(b,m):
                     disable_web_page_preview=True)
             
          
-@StreamBot.on_message(filters.regex("Cʜᴀɴɴᴇʟ♻️"))
+@StreamBot.on_message(filters.regex("𝐂𝐡𝐚𝐧𝐧𝐞𝐥♻️"))
 async def follow_user(b,m):
     try:
        await b.send_message(chat_id=m.chat.id,text="HELLO",quote=True)
     except Exception:
                 await b.send_message(
                     chat_id=m.chat.id,
-                    text="<B>JOIN OUR UPDATE CHANNEL</B>",
+                    text="<B>Jᴏɪɴ Oᴜʀ Cʜᴀɴɴᴇʟ</B>",
                     
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("JOIN NOW", url=f"https://t.me/YourDemandZone")
+                                InlineKeyboardButton("Jᴏɪɴ Nᴏᴡ", url=f"https://t.me/YourDemandZone")
                             ]
                         ]
                     ),
@@ -50,27 +50,27 @@ async def follow_user(b,m):
                     disable_web_page_preview=True)
         
 
-@StreamBot.on_message(filters.regex("ᴅᴄ"))
+"""@StreamBot.on_message(filters.regex("ᴅᴄ"))
 async def start(bot, update):
     text = START_TEXT.format(update.from_user.dc_id)
     await update.reply_text(
         text=text,
         disable_web_page_preview=True,
         quote=True
-    )
+    )"""
 
     
     
 @StreamBot.on_message(filters.command("list"))
 async def list(l, m):
-    LIST_MSG = "Hi! {} Here is a list of all my commands \n \n 1 . `sᴛᴀʀᴛ⚡️` \n 2. `ʜᴇʟᴘ📚` \n 3. `ʟᴏɢɪɴ🔑` \n 4.`Cʜᴀɴɴᴇʟ♻️` \n 5. `ping📡` \n 6. `status📊` \n 7. `ᴅᴄ` \n 8. `Cʀᴇᴀᴛᴏʀ😎` "
+    LIST_MSG = "Hi! {} Here is a list of all my commands \n \n 1 . `𝐒𝐭𝐚𝐫𝐭⚡️` \n 2. `𝐇𝐞𝐥𝐩📚` \n 3.`𝐂𝐡𝐚𝐧𝐧𝐞𝐥♻️` \n 4. `𝐏𝐢𝐧𝐠📡` \n 5. `𝐒𝐭𝐚𝐭𝐮𝐬📊` \n 6. `𝐂𝐫𝐞𝐚𝐭𝐨𝐫😎` "
     await l.send_message(chat_id = m.chat.id,
         text = LIST_MSG.format(m.from_user.mention(style="md"))
         
     )
     
     
-@StreamBot.on_message(filters.regex("ᴘɪɴɢ📡"))
+@StreamBot.on_message(filters.regex("𝐏𝐢𝐧𝐠📡"))
 async def ping(b, m):
     start_t = time.time()
     ag = await m.reply_text("....")
@@ -81,7 +81,7 @@ async def ping(b, m):
     
     
     
-@StreamBot.on_message(filters.private & filters.regex("sᴛᴀᴛᴜs📊"))
+@StreamBot.on_message(filters.private & filters.regex("𝐒𝐭𝐚𝐭𝐮𝐬📊"))
 async def stats(bot, update):
   currentTime = readable_time((time.time() - StartTime))
   total, used, free = shutil.disk_usage('.')
