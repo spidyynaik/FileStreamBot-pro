@@ -1,4 +1,4 @@
-# (c) adarsh-goel
+# (c) Spidy-Naik
 import os
 from os import getenv, environ
 from dotenv import load_dotenv

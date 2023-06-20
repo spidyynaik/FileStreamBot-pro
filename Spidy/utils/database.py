@@ -1,4 +1,4 @@
-#(c) Adarsh-Goel
+#(c) Spidy-Naik
 import datetime
 import motor.motor_asyncio
 

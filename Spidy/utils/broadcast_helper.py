@@ -1,4 +1,4 @@
-# (c) adarsh-goel
+# (c) Spidy-Naik
 
 import asyncio
 import traceback

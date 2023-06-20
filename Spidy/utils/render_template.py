@@ -1,8 +1,8 @@
-from Adarsh.vars import Var
-from Adarsh.bot import StreamBot
-from Adarsh.utils.human_readable import humanbytes
-from Adarsh.utils.file_properties import get_file_ids
-from Adarsh.server.exceptions import InvalidHash
+from Spidy.vars import Var
+from Spidy.bot import StreamBot
+from Spidy.utils.human_readable import humanbytes
+from Spidy.utils.file_properties import get_file_ids
+from Spidy.server.exceptions import InvalidHash
 import urllib.parse
 import aiofiles
 import logging
@@ -17,17 +17,17 @@ async def render_page(id, secure_hash):
         raise InvalidHash
     src = urllib.parse.urljoin(Var.URL, f'{secure_hash}{str(id)}')
     if str(file_data.mime_type.split('/')[0].strip()) == 'video':
-        async with aiofiles.open('Adarsh/template/req.html') as r:
+        async with aiofiles.open('Spidy/template/req.html') as r:
             heading = 'Watch {}'.format(file_data.file_name)
             tag = file_data.mime_type.split('/')[0].strip()
             html = (await r.read()).replace('tag', tag) % (heading, file_data.file_name, src)
     elif str(file_data.mime_type.split('/')[0].strip()) == 'audio':
-        async with aiofiles.open('Adarsh/template/req.html') as r:
+        async with aiofiles.open('Spidy/template/req.html') as r:
             heading = 'Listen {}'.format(file_data.file_name)
             tag = file_data.mime_type.split('/')[0].strip()
             html = (await r.read()).replace('tag', tag) % (heading, file_data.file_name, src)
     else:
-        async with aiofiles.open('Adarsh/template/dl.html') as r:
+        async with aiofiles.open('Spidy/template/dl.html') as r:
             async with aiohttp.ClientSession() as s:
                 async with s.get(src) as u:
                     heading = 'Download {}'.format(file_data.file_name)
