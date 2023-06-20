@@ -1,4 +1,4 @@
-# (c) @adarsh-goel
+# (c) @Mr_SPIDY
 import os
 import time
 import string
@@ -6,10 +6,10 @@ import random
 import asyncio
 import aiofiles
 import datetime
-from Adarsh.utils.broadcast_helper import send_msg
-from Adarsh.utils.database import Database
-from Adarsh.bot import StreamBot
-from Adarsh.vars import Var
+from Spidy.utils.broadcast_helper import send_msg
+from Spidy.utils.database import Database
+from Spidy.bot import StreamBot
+from Spidy.vars import Var
 from pyrogram import filters, Client
 from pyrogram.types import Message
 db = Database(Var.DATABASE_URL, Var.name)
