@@ -20,17 +20,17 @@ async def render_page(id, secure_hash):
         async with aiofiles.open('Spidy/template/req.html') as r:
             heading = 'Watch {}'.format(file_data.file_name)
             tag = file_data.mime_type.split('/')[0].strip()
-            html = (await r.read()).replace('tag', tag) % (heading, file_data.file_name, src)
+            html = (await r.read()).format(src, '', heading)
     elif str(file_data.mime_type.split('/')[0].strip()) == 'audio':
         async with aiofiles.open('Spidy/template/req.html') as r:
             heading = 'Listen {}'.format(file_data.file_name)
             tag = file_data.mime_type.split('/')[0].strip()
-            html = (await r.read()).replace('tag', tag) % (heading, file_data.file_name, src)
+            html = (await r.read()).format(src, '', heading)
     else:
         async with aiofiles.open('Spidy/template/dl.html') as r:
             async with aiohttp.ClientSession() as s:
                 async with s.get(src) as u:
                     heading = 'Download {}'.format(file_data.file_name)
                     file_size = humanbytes(int(u.headers.get('Content-Length')))
-                    html = (await r.read()) % (heading, file_data.file_name, src, file_size)
+                    html = (await r.read()).format(heading, file_data.file_name, src, file_size)
     return html
