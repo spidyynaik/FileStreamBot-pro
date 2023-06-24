@@ -116,7 +116,7 @@ async def private_receive_handler(c: Client, m: Message):
         await c.send_message(chat_id=Var.BIN_CHANNEL, text=f"Gᴏᴛ FʟᴏᴏᴅWᴀɪᴛ ᴏғ {str(e.x)}s from [{m.from_user.first_name}](tg://user?id={m.from_user.id})\n\n**𝚄𝚜𝚎𝚛 𝙸𝙳 :** `{str(m.from_user.id)}`", disable_web_page_preview=True)
 
 @StreamBot.on_callback_query(filters.regex(r'stream'))
-async def stream_callback_handler(c: Client, query: CallbackQuery):
+async def stream_callback_handler(c: Client, query: CallbackQuery, m: Message):
     try:
         data = query.data
         log_msg = await m.forward(chat_id=Var.BIN_CHANNEL)
