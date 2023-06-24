@@ -124,20 +124,20 @@ async def stream_callback_handler(c: Client, query: CallbackQuery):
         
             # Retrieve the necessary information for streaming
             log_msg = await c.get_message(chat_id, message_id)
-            stream_link = f"{Var.URL}watch/{str(log_msg.message_id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-            online_link = f"{Var.URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
+            slink = f"{Var.URL}watch/{str(log_msg.message_id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
+            dlink = f"{Var.URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
     
             # Implement your streaming logic here
             # You can use the 'stream_link' variable for the stream URL
         elif query.data == "stream":
             buttons = [[
-                 InlineKeyboardButton('ʙʀᴏᴡsᴇʀ', url=stream_link),
-                 InlineKeyboardButton('ᴍx ᴘʟᴀʏᴇʀ', url='intent:online_link#Intent;package=com.mxtech.videoplayer.ad;S.title=Power by @YourDemandZone ;end')
+                 InlineKeyboardButton('ʙʀᴏᴡsᴇʀ', url=slink),
+                 InlineKeyboardButton('ᴍx ᴘʟᴀʏᴇʀ', url='intent:dlink#Intent;package=com.mxtech.videoplayer.ad;S.title=Power by @YourDemandZone ;end')
             ],  [
-                 InlineKeyboardButton('ᴠʟᴄ & ᴠᴅx', url='vlc://online_link'),
-                 InlineKeyboardButton('ᴘʟᴀʏɪᴛ', url='playit://playerv2/video?url=online_link')
+                 InlineKeyboardButton('ᴠʟᴄ & ᴠᴅx', url='vlc://dlink'),
+                 InlineKeyboardButton('ᴘʟᴀʏɪᴛ', url='playit://playerv2/video?url=dlink')
             ],[
-                InlineKeyboardButton('ᴅᴏᴡɴʟᴏᴀᴅ', url=online_link),
+                InlineKeyboardButton('ᴅᴏᴡɴʟᴏᴀᴅ', url=dlink),
                 InlineKeyboardButton('ᴄᴏɴᴛᴀᴄᴛ', url='htps://t.me/Mr_SpidyBot')
             ],[
                 InlineKeyboardButton('ᴊᴏɪɴ ʏᴅᴢᴏɴᴇ', url='htps://t.me/YourDemandZone')
@@ -174,7 +174,7 @@ async def channel_receive_handler(bot, broadcast):
             message_id=broadcast.id,
             reply_markup=InlineKeyboardMarkup(
                 [
-                    [InlineKeyboardButton("Sᴛʀᴇᴀᴍɪɴɢ 🎬", url=stream_link),
+                    [InlineKeyboardButton("Sᴛʀᴇᴀᴍɪɴɢ 🎬", callback_data='stream'),
                      InlineKeyboardButton('Dᴏᴡɴʟᴏᴀᴅ 📥', url=online_link)],
                     [InlineKeyboardButton("🍀 Jᴏɪɴ Mᴏᴠɪᴇ Gʀᴏᴜᴘ 🍀", url="https://t.me/+UA8rF845SWk4ZjU1")]
                 ]
