@@ -119,9 +119,10 @@ async def private_receive_handler(c: Client, m: Message):
 async def stream_callback_handler(c: Client, query: CallbackQuery):
     try:
         data = query.data
-        if query.data == "close_data":
-            await query.message.delete()
-        elif query.data == "stream":
+        log_msg = await m.forward(chat_id=Var.BIN_CHANNEL)
+        stream_link = f"{Var.URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
+        online_link = f"{Var.URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
+        if query.data == "stream":
             buttons = [[
                  InlineKeyboardButton('ʙʀᴏᴡsᴇʀ', url=stream_link),
                  InlineKeyboardButton('ᴍx ᴘʟᴀʏᴇʀ', url='intent:online_link#Intent;package=com.mxtech.videoplayer.ad;S.title=Power by @YourDemandZone ;end')
@@ -134,9 +135,9 @@ async def stream_callback_handler(c: Client, query: CallbackQuery):
             ],[
                 InlineKeyboardButton('ᴊᴏɪɴ ʏᴅᴢᴏɴᴇ', url='htps://t.me/YourDemandZone')
             ]]
+            reply_markup = InlineKeyboardMarkup(buttons)
     except Exception as e:
         print(e)
-
 @StreamBot.on_message(filters.channel & ~filters.group & (filters.document | filters.video | filters.photo)  & ~filters.forwarded, group=-1)
 async def channel_receive_handler(bot, broadcast):
     if MY_PASS:
