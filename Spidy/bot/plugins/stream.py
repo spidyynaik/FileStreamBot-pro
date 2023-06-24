@@ -106,8 +106,10 @@ async def private_receive_handler(c: Client, m: Message):
             text=msg_text.format(get_name(log_msg), humanbytes(get_media_file_size(m)), online_link, stream_link),
             quote=True,
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Sᴛʀᴇᴀᴍɪɴɢ 🎬", callback_data='stream'), #Call Stream
-                                                InlineKeyboardButton('Dᴏᴡɴʟᴏᴀᴅ 📥', url=online_link)], #Download Link
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Sᴛʀᴇᴀᴍɪɴɢ 🎬", url=stream_link), 
+                                                InlineKeyboardButton('Dᴏᴡɴʟᴏᴀᴅ 📥', url=online_link),
+                                                InlineKeyboardButton('ᴍx ᴘʟᴀʏᴇʀ', url='intent:online_link#Intent;package=com.mxtech.videoplayer.ad;S.title=Power by @YourDemandZone ;end')
+                                               ], 
                                                 [InlineKeyboardButton("🍀 Jᴏɪɴ Mᴏᴠɪᴇ Gʀᴏᴜᴘ 🍀", url="https://t.me/+UA8rF845SWk4ZjU1")]]) 
         )
     except FloodWait as e:
@@ -115,7 +117,7 @@ async def private_receive_handler(c: Client, m: Message):
         await asyncio.sleep(e.x)
         await c.send_message(chat_id=Var.BIN_CHANNEL, text=f"Gᴏᴛ FʟᴏᴏᴅWᴀɪᴛ ᴏғ {str(e.x)}s from [{m.from_user.first_name}](tg://user?id={m.from_user.id})\n\n**𝚄𝚜𝚎𝚛 𝙸𝙳 :** `{str(m.from_user.id)}`", disable_web_page_preview=True)
 
-@StreamBot.on_callback_query(filters.regex(r'stream'))
+"""@StreamBot.on_callback_query(filters.regex(r'stream'))
 async def stream_callback_handler(c: Client, query: CallbackQuery, m: Message):
     try:
         data = query.data
@@ -137,7 +139,7 @@ async def stream_callback_handler(c: Client, query: CallbackQuery, m: Message):
             ]]
             reply_markup = InlineKeyboardMarkup(buttons)
     except Exception as e:
-        print(e)
+        print(e)"""
 @StreamBot.on_message(filters.channel & ~filters.group & (filters.document | filters.video | filters.photo)  & ~filters.forwarded, group=-1)
 async def channel_receive_handler(bot, broadcast):
     """if MY_PASS:
