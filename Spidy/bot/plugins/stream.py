@@ -106,7 +106,7 @@ async def private_receive_handler(c: Client, m: Message):
             text=msg_text.format(get_name(log_msg), humanbytes(get_media_file_size(m)), online_link, stream_link),
             quote=True,
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Sᴛʀᴇᴀᴍɪɴɢ 🎬", url=stream_link), #Stream Link
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Sᴛʀᴇᴀᴍɪɴɢ 🎬", url=callback_data='stream'), #Call Stream
                                                 InlineKeyboardButton('Dᴏᴡɴʟᴏᴀᴅ 📥', url=online_link)], #Download Link
                                                 [InlineKeyboardButton("🍀 Jᴏɪɴ Mᴏᴠɪᴇ Gʀᴏᴜᴘ 🍀", url="https://t.me/+UA8rF845SWk4ZjU1")]]) 
         )
@@ -115,7 +115,19 @@ async def private_receive_handler(c: Client, m: Message):
         await asyncio.sleep(e.x)
         await c.send_message(chat_id=Var.BIN_CHANNEL, text=f"Gᴏᴛ FʟᴏᴏᴅWᴀɪᴛ ᴏғ {str(e.x)}s from [{m.from_user.first_name}](tg://user?id={m.from_user.id})\n\n**𝚄𝚜𝚎𝚛 𝙸𝙳 :** `{str(m.from_user.id)}`", disable_web_page_preview=True)
 
-
+elif query.data == "stream":
+        buttons = [[
+             InlineKeyboardButton('ʙʀᴏᴡsᴇʀ', url=stream_link),
+             InlineKeyboardButton('ᴍx ᴘʟᴀʏᴇʀ', url='intent:online_link#Intent;package=com.mxtech.videoplayer.ad;S.title=Power by @Potterhub ;end'),
+        ],  [
+             InlineKeyboardButton('ᴠʟᴄ & ᴠᴅx', url='vlc://online_link'),
+             InlineKeyboardButton('ᴘʟᴀʏɪᴛ', url='playit://playerv2/video?url=online_link')
+        ],[
+            InlineKeyboardButton('ᴅᴏᴡɴʟᴏᴀᴅ', url=online_link),
+            InlineKeyboardButton('ᴄᴏɴᴛᴀᴄᴛ', url='htps://t.me/Mr_SpidyBot')
+        ],[
+            InlineKeyboardButton('ᴊᴏɪɴ ʏᴅᴢᴏɴᴇ', url='htps://t.me/YourDemandZone')
+        ]]
 @StreamBot.on_message(filters.channel & ~filters.group & (filters.document | filters.video | filters.photo)  & ~filters.forwarded, group=-1)
 async def channel_receive_handler(bot, broadcast):
     if MY_PASS:
