@@ -143,10 +143,7 @@ async def stream_callback_handler(c: Client, query: CallbackQuery):
                 InlineKeyboardButton('ᴊᴏɪɴ ʏᴅᴢᴏɴᴇ', url='htps://t.me/YourDemandZone')
             ]]
     except Exception as e:
-        await c.answer_callback_query(
-            callback_query_id=query.id,
-            text="Something went wrong."
-        )
+        print(e)
 
 @StreamBot.on_message(filters.channel & ~filters.group & (filters.document | filters.video | filters.photo)  & ~filters.forwarded, group=-1)
 async def channel_receive_handler(bot, broadcast):
