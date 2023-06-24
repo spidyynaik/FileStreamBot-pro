@@ -132,7 +132,7 @@ async def stream_callback_handler(c: Client, query: CallbackQuery):
         elif query.data == "stream":
             buttons = [[
                  InlineKeyboardButton('ʙʀᴏᴡsᴇʀ', url=stream_link),
-                 InlineKeyboardButton('ᴍx ᴘʟᴀʏᴇʀ', url='intent:online_link#Intent;package=com.mxtech.videoplayer.ad;S.title=Power by @YourDemandZone ;end'),
+                 InlineKeyboardButton('ᴍx ᴘʟᴀʏᴇʀ', url='intent:online_link#Intent;package=com.mxtech.videoplayer.ad;S.title=Power by @YourDemandZone ;end')
             ],  [
                  InlineKeyboardButton('ᴠʟᴄ & ᴠᴅx', url='vlc://online_link'),
                  InlineKeyboardButton('ᴘʟᴀʏɪᴛ', url='playit://playerv2/video?url=online_link')
