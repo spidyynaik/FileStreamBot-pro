@@ -106,7 +106,7 @@ async def private_receive_handler(c: Client, m: Message):
             text=msg_text.format(get_name(log_msg), humanbytes(get_media_file_size(m)), online_link, stream_link),
             quote=True,
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Sᴛʀᴇᴀᴍɪɴɢ 🎬", url=callback_data='stream'), #Call Stream
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Sᴛʀᴇᴀᴍɪɴɢ 🎬", callback_data='stream'), #Call Stream
                                                 InlineKeyboardButton('Dᴏᴡɴʟᴏᴀᴅ 📥', url=online_link)], #Download Link
                                                 [InlineKeyboardButton("🍀 Jᴏɪɴ Mᴏᴠɪᴇ Gʀᴏᴜᴘ 🍀", url="https://t.me/+UA8rF845SWk4ZjU1")]]) 
         )
