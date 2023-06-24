@@ -121,23 +121,15 @@ async def stream_callback_handler(c: Client, query: CallbackQuery):
         data = query.data
         if query.data == "close_data":
             await query.message.delete()
-        
-            # Retrieve the necessary information for streaming
-            log_msg = await c.get_message(chat_id, message_id)
-            slink = f"{Var.URL}watch/{str(log_msg.message_id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-            dlink = f"{Var.URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-    
-            # Implement your streaming logic here
-            # You can use the 'stream_link' variable for the stream URL
         elif query.data == "stream":
             buttons = [[
-                 InlineKeyboardButton('ʙʀᴏᴡsᴇʀ', url=slink),
-                 InlineKeyboardButton('ᴍx ᴘʟᴀʏᴇʀ', url='intent:dlink#Intent;package=com.mxtech.videoplayer.ad;S.title=Power by @YourDemandZone ;end')
+                 InlineKeyboardButton('ʙʀᴏᴡsᴇʀ', url=stream_link),
+                 InlineKeyboardButton('ᴍx ᴘʟᴀʏᴇʀ', url='intent:online_link#Intent;package=com.mxtech.videoplayer.ad;S.title=Power by @YourDemandZone ;end')
             ],  [
-                 InlineKeyboardButton('ᴠʟᴄ & ᴠᴅx', url='vlc://dlink'),
-                 InlineKeyboardButton('ᴘʟᴀʏɪᴛ', url='playit://playerv2/video?url=dlink')
+                 InlineKeyboardButton('ᴠʟᴄ & ᴠᴅx', url='vlc://online_link'),
+                 InlineKeyboardButton('ᴘʟᴀʏɪᴛ', url='playit://playerv2/video?url=online_link')
             ],[
-                InlineKeyboardButton('ᴅᴏᴡɴʟᴏᴀᴅ', url=dlink),
+                InlineKeyboardButton('ᴅᴏᴡɴʟᴏᴀᴅ', url=online_link),
                 InlineKeyboardButton('ᴄᴏɴᴛᴀᴄᴛ', url='htps://t.me/Mr_SpidyBot')
             ],[
                 InlineKeyboardButton('ᴊᴏɪɴ ʏᴅᴢᴏɴᴇ', url='htps://t.me/YourDemandZone')
