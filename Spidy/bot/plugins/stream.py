@@ -116,10 +116,10 @@ async def private_receive_handler(c: Client, m: Message):
         await c.send_message(chat_id=Var.BIN_CHANNEL, text=f"Gᴏᴛ FʟᴏᴏᴅWᴀɪᴛ ᴏғ {str(e.x)}s from [{m.from_user.first_name}](tg://user?id={m.from_user.id})\n\n**𝚄𝚜𝚎𝚛 𝙸𝙳 :** `{str(m.from_user.id)}`", disable_web_page_preview=True)
 
 @StreamBot.on_callback_query(filters.regex(r'stream'))
-async def stream_callback_handler(c: Client, query: CallbackQuery, m: Message):
+async def stream_callback_handler(c: Client, query: CallbackQuery):
     try:
         data = query.data
-        log_msg = await m.forward(chat_id=Var.BIN_CHANNEL)
+        log_msg = await Mesage.forward(chat_id=Var.BIN_CHANNEL)
         stream_link = f"{Var.URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
         online_link = f"{Var.URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
         if query.data == "stream":
@@ -140,7 +140,7 @@ async def stream_callback_handler(c: Client, query: CallbackQuery, m: Message):
         print(e)
 @StreamBot.on_message(filters.channel & ~filters.group & (filters.document | filters.video | filters.photo)  & ~filters.forwarded, group=-1)
 async def channel_receive_handler(bot, broadcast):
-    if MY_PASS:
+    """if MY_PASS:
         check_pass = await pass_db.get_user_pass(broadcast.chat.id)
         if check_pass == None:
             await broadcast.reply_text("Login first using /login cmd \n Password is 0000")
@@ -149,7 +149,7 @@ async def channel_receive_handler(bot, broadcast):
             await broadcast.reply_text("Wrong password, login again")
             await pass_db.delete_user(broadcast.chat.id)
             
-            return
+            return"""
     if int(broadcast.chat.id) in Var.BANNED_CHANNELS:
         await bot.leave_chat(broadcast.chat.id)
         
